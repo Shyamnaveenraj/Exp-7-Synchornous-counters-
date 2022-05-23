@@ -50,39 +50,90 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 
-### PROGRAM 
-/*
+### PROGRAM
+### step1
+Create a new project in QuartusII software.
+### step2
+Name the project as uc for upcounter and dc for down counter.
+### step3
+Create a new verilog hdl file in the project file.
+### step4
+Name the module as dc and uc for down counter and up counter.
+### step5
+Within the module declare input and output variables.
+### step6
+Create a loop using if-else with condition parameter as reset value.
+### step7
+End the loop.
+### step8
+End the module.
+## program
+~~~
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: M.Shyam Naveen Raj 
+RegisterNumber: 212221230099  
+~~~
+### RTL LOGIC UP COUNTER AND DOWN COUNTER
+### UP COUNTER
+~~~
+module uc(input CLK,input reset,output[0:3]counter);
+reg[0:3]counter_up;
+always@(posedge CLK or posedge reset)
+begin 
+if(reset)
+counter_up<=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
+~~~
+### DOWN COUNTER
+~~~
+module dc(input CLK,input reset,output[0:3]counter);
+reg[0:3]counter_down;
+always@(posedge CLK or posedge reset)
+begin 
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down -4'd1;
+end
+assign counter=counter_down;
+endmodule
+~~~
+### RTL LOGIC UP COUNTER
+![](qw1.png)
 
 
 
 
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+
+
+
+
+### TIMING DIGRAMS FOR UP COUNTER
+![](qw2.png)  
+
+
+
+
+
+### TRUTH TABLE FOR UP COUNTER
+![](qw3.png)
+### RTL LOGIC DOWN COUNTER
+![](qw4.png)
+### TIMING DIGRAMS FOR DOWN COUNTER
+![](qw5.png)
+### TRUTH TABLE FOR DOWN COUNTER
+![](qw6.png)
 
 
 
 
 
 
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+### RESULTS
+Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
